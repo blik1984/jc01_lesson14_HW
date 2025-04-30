@@ -54,4 +54,27 @@ public class AirlineSchedule {
 		}
 		return -1;
 	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(airportName, schedule);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AirlineSchedule other = (AirlineSchedule) obj;
+		return Objects.equals(airportName, other.airportName) && Objects.equals(schedule, other.schedule);
+	}
+
+	@Override
+	public String toString() {
+		return "AirlineSchedule [airportName=" + airportName + ", schedule=" + schedule + "]";
+	}
+	
 }
